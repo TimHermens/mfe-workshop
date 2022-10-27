@@ -5,7 +5,7 @@ import { Passenger } from '../entities/passenger';
 import { PassengerDataService } from '../infrastructure/passenger.data.service';
 
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class SearchFacade {
 
   private passengerListSubject = new BehaviorSubject<Passenger[]>([]);
@@ -15,13 +15,13 @@ export class SearchFacade {
   }
 
   load(name: string, firstname: string): void {
-    this.passengerDataService.load(name, firstname).subscribe(
-      passengerList => {
+    this.passengerDataService.load(name, firstname).subscribe({
+      next: passengerList => {
         this.passengerListSubject.next(passengerList)
       },
-      err => {
+      error: err => {
         console.error('err', err);
       }
-    );
+    });
   }
 }

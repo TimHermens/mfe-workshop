@@ -10,7 +10,8 @@ export class FlightEditComponent implements OnInit {
   showDetails: string | undefined;
   showWarning = false;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.route.params.subscribe((p) => {

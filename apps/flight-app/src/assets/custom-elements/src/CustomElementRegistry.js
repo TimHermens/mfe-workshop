@@ -1,4 +1,3 @@
-import CustomElementInternals from './CustomElementInternals.js';
 import DocumentConstructionObserver from './DocumentConstructionObserver.js';
 import Deferred from './Deferred.js';
 import * as Utilities from './Utilities.js';
@@ -173,8 +172,8 @@ export default class CustomElementRegistry {
         const pendingElements = elementsWithPendingDefinitions.get(localName);
         if (pendingElements) {
           pendingElements.push(element);
-        // If there is *any other* applicable definition for the element, add it
-        // to the list of elements with stable definitions that need to be upgraded.
+          // If there is *any other* applicable definition for the element, add it
+          // to the list of elements with stable definitions that need to be upgraded.
         } else if (this._internals.localNameToDefinition(localName)) {
           elementsWithStableDefinitions.push(element);
         }

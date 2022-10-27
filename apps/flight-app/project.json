@@ -92,13 +92,6 @@
         "jestConfig": "apps/flight-app/jest.config.ts",
         "passWithNoTests": true
       }
-    },
-
-    "demo-executor": {
-      "executor": "@flight-workspace/my-plugin:build",
-      "options": {
-        "folder": "dist"
-      }
     }
   },
   "tags": ["type:app", "domain:flights"]

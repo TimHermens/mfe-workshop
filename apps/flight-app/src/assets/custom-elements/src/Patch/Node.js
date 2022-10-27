@@ -1,11 +1,10 @@
 import Native from './Native.js';
-import CustomElementInternals from '../CustomElementInternals.js';
 import * as Utilities from '../Utilities.js';
 
 /**
  * @param {!CustomElementInternals} internals
  */
-export default function(internals) {
+export default function (internals) {
   // `Node#nodeValue` is implemented on `Attr`.
   // `Node#textContent` is implemented on `Attr`, `Element`.
 
@@ -16,7 +15,7 @@ export default function(internals) {
      * @param {?Node} refNode
      * @return {!Node}
      */
-    function(node, refNode) {
+    function (node, refNode) {
       if (node instanceof DocumentFragment) {
         const insertedNodes = Array.prototype.slice.apply(node.childNodes);
         const nativeResult = Native.Node_insertBefore.call(this, node, refNode);
@@ -53,7 +52,7 @@ export default function(internals) {
      * @param {!Node} node
      * @return {!Node}
      */
-    function(node) {
+    function (node) {
       if (node instanceof DocumentFragment) {
         const insertedNodes = Array.prototype.slice.apply(node.childNodes);
         const nativeResult = Native.Node_appendChild.call(this, node);
@@ -90,7 +89,7 @@ export default function(internals) {
      * @param {boolean=} deep
      * @return {!Node}
      */
-    function(deep) {
+    function (deep) {
       const clone = Native.Node_cloneNode.call(this, deep);
       // Only create custom elements if this element's owner document is
       // associated with the registry.
@@ -108,7 +107,7 @@ export default function(internals) {
      * @param {!Node} node
      * @return {!Node}
      */
-    function(node) {
+    function (node) {
       const nodeWasConnected = Utilities.isConnected(node);
       const nativeResult = Native.Node_removeChild.call(this, node);
 
@@ -126,7 +125,7 @@ export default function(internals) {
      * @param {!Node} nodeToRemove
      * @return {!Node}
      */
-    function(nodeToInsert, nodeToRemove) {
+    function (nodeToInsert, nodeToRemove) {
       if (nodeToInsert instanceof DocumentFragment) {
         const insertedNodes = Array.prototype.slice.apply(nodeToInsert.childNodes);
         const nativeResult = Native.Node_replaceChild.call(this, nodeToInsert, nodeToRemove);
@@ -169,7 +168,7 @@ export default function(internals) {
       enumerable: baseDescriptor.enumerable,
       configurable: true,
       get: baseDescriptor.get,
-      set: /** @this {Node} */ function(assignedValue) {
+      set: /** @this {Node} */ function (assignedValue) {
         // If this is a text node then there are no nodes to disconnect.
         if (this.nodeType === Node.TEXT_NODE) {
           baseDescriptor.set.call(this, assignedValue);
@@ -207,13 +206,13 @@ export default function(internals) {
   if (Native.Node_textContent && Native.Node_textContent.get) {
     patch_textContent(Node.prototype, Native.Node_textContent);
   } else {
-    internals.addPatch(function(element) {
+    internals.addPatch(function (element) {
       patch_textContent(element, {
         enumerable: true,
         configurable: true,
         // NOTE: This implementation of the `textContent` getter assumes that
         // text nodes' `textContent` getter will not be patched.
-        get: /** @this {Node} */ function() {
+        get: /** @this {Node} */ function () {
           /** @type {!Array<string>} */
           const parts = [];
 
@@ -223,7 +222,7 @@ export default function(internals) {
 
           return parts.join('');
         },
-        set: /** @this {Node} */ function(assignedValue) {
+        set: /** @this {Node} */ function (assignedValue) {
           while (this.firstChild) {
             Native.Node_removeChild.call(this, this.firstChild);
           }

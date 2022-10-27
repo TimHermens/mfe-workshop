@@ -40,20 +40,25 @@
   .has-success & {
     background-color: $success-input-bg;
     color: $success-color;
+
     &.border-input {
       border: 1px solid $success-color;
     }
   }
+
   .has-success &:focus {
     background-color: $white-bg;
   }
+
   .has-error & {
     background-color: $danger-input-bg;
     color: $danger-color;
+
     &.border-input {
       border: 1px solid $danger-color;
     }
   }
+
   .has-error &:focus {
     background-color: $white-bg;
   }
@@ -67,9 +72,11 @@
     top: 50%;
     vertical-align: middle;
   }
+
   &.border-input {
     border: 1px solid $table-line-color;
   }
+
   .open & {
     border-bottom-color: transparent;
   }
@@ -101,12 +108,15 @@
   .has-error & {
     background-color: $white-color;
   }
+
   .has-error .form-control:focus + & {
     color: $danger-color;
   }
+
   .has-success .form-control:focus + & {
     color: $success-color;
   }
+
   .form-control:focus + &,
   .form-control:focus ~ & {
     background-color: $white-color;

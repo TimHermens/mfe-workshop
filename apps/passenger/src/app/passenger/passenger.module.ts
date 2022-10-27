@@ -30,10 +30,11 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [PassengerComponent],
+  declarations: [ PassengerComponent ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
   ]
 })
-export class PassengerModule { }
+export class PassengerModule {
+}

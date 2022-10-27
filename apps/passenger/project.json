@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/passenger",
         "index": "apps/passenger/src/index.html",
@@ -23,7 +25,7 @@
           "apps/flight-app/src/assets/css/demo.css",
           "apps/flight-app/src/assets/css/themify-icons.css"
         ],
-        "scripts": []
+        "scripts": [ ]
       },
       "configurations": {
         "production": {
@@ -87,12 +89,17 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/passenger"],
+      "outputs": [
+        "coverage/apps/passenger"
+      ],
       "options": {
         "jestConfig": "apps/passenger/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["type:app", "domain:passenger"]
+  "tags": [
+    "type:app",
+    "domain:passenger"
+  ]
 }

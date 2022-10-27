@@ -20,9 +20,9 @@ import PatchElement from './Patch/Element.js';
 const priorCustomElements = window['customElements'];
 
 if (!priorCustomElements ||
-     priorCustomElements['forcePolyfill'] ||
-     (typeof priorCustomElements['define'] != 'function') ||
-     (typeof priorCustomElements['get'] != 'function')) {
+  priorCustomElements['forcePolyfill'] ||
+  (typeof priorCustomElements['define'] != 'function') ||
+  (typeof priorCustomElements['get'] != 'function')) {
   /** @type {!CustomElementInternals} */
   const internals = new CustomElementInternals();
 

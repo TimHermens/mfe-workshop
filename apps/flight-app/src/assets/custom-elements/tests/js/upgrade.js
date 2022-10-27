@@ -8,26 +8,30 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-suite('Upgrades', function() {
+suite('Upgrades', function () {
   var work;
   var assert = chai.assert;
 
-  setup(function() {
+  setup(function () {
     work = document.createElement('div');
     document.body.appendChild(work);
   });
 
-  teardown(function() {
+  teardown(function () {
     document.body.removeChild(work);
   });
 
-  test('connected elements upgrade when defined', function() {
+  test('connected elements upgrade when defined', function () {
     work.innerHTML = '<x-markup-1><x-markup-2></x-markup-2></x-markup-1>';
     var e1 = work.firstChild;
     var e2 = e1.firstChild;
 
-    class X1 extends HTMLElement {}
-    class X2 extends HTMLElement {}
+    class X1 extends HTMLElement {
+    }
+
+    class X2 extends HTMLElement {
+    }
+
     customElements.define('x-markup-1', X1);
     customElements.define('x-markup-2', X2);
 
@@ -35,13 +39,17 @@ suite('Upgrades', function() {
     assert.instanceOf(e2, X2);
   });
 
-  test('defined disconnected elements upgrade when connected', function() {
+  test('defined disconnected elements upgrade when connected', function () {
     var e1 = document.createElement('x-disconnected-1');
     var e2 = document.createElement('x-disconnected-2');
     e1.appendChild(e2);
 
-    class X1 extends HTMLElement {}
-    class X2 extends HTMLElement {}
+    class X1 extends HTMLElement {
+    }
+
+    class X2 extends HTMLElement {
+    }
+
     customElements.define('x-disconnected-1', X1);
     customElements.define('x-disconnected-2', X2);
 

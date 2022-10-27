@@ -16,6 +16,7 @@
   &:focus {
     outline: 0 !important;
   }
+
   &:active,
   &.active,
   .open > &.dropdown-toggle {
@@ -75,6 +76,7 @@
   &.btn-fill {
     color: $default-color;
   }
+
   &.btn-fill:hover,
   &.btn-fill:focus {
     color: $default-states-color;

@@ -1,5 +1,4 @@
 import Native from './Native.js';
-import CustomElementInternals from '../CustomElementInternals.js';
 import * as Utilities from '../Utilities.js';
 
 import PatchParentNode from './Interface/ParentNode.js';
@@ -7,14 +6,14 @@ import PatchParentNode from './Interface/ParentNode.js';
 /**
  * @param {!CustomElementInternals} internals
  */
-export default function(internals) {
+export default function (internals) {
   Utilities.setPropertyUnchecked(Document.prototype, 'createElement',
     /**
      * @this {Document}
      * @param {string} localName
      * @return {!Element}
      */
-    function(localName) {
+    function (localName) {
       // Only create custom elements if this document is associated with the registry.
       if (this.__CE_hasRegistry) {
         const definition = internals.localNameToDefinition(localName);
@@ -36,7 +35,7 @@ export default function(internals) {
      * @param {boolean=} deep
      * @return {!Node}
      */
-    function(node, deep) {
+    function (node, deep) {
       const clone = Native.Document_importNode.call(this, node, deep);
       // Only create custom elements if this document is associated with the registry.
       if (!this.__CE_hasRegistry) {
@@ -56,7 +55,7 @@ export default function(internals) {
      * @param {string} localName
      * @return {!Element}
      */
-    function(namespace, localName) {
+    function (namespace, localName) {
       // Only create custom elements if this document is associated with the registry.
       if (this.__CE_hasRegistry && (namespace === null || namespace === NS_HTML)) {
         const definition = internals.localNameToDefinition(localName);

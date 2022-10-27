@@ -9,6 +9,7 @@
     border-radius: 4px;
 
   }
+
   .navbar & {
     border-radius: 0;
     left: 0;
@@ -18,6 +19,7 @@
     width: 100%;
     z-index: 3;
   }
+
   .navbar:not(.navbar-transparent) & {
     top: 70px;
   }

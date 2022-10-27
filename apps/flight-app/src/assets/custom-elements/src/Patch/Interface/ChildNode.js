@@ -1,4 +1,3 @@
-import CustomElementInternals from '../../CustomElementInternals.js';
 import * as Utilities from '../../Utilities.js';
 
 /**
@@ -16,13 +15,13 @@ let ChildNodeNativeMethods;
  * @param {!Object} destination
  * @param {!ChildNodeNativeMethods} builtIn
  */
-export default function(internals, destination, builtIn) {
+export default function (internals, destination, builtIn) {
   /**
    * @param {!function(...(!Node|string))} builtInMethod
    * @return {!function(...(!Node|string))}
    */
   function beforeAfterPatch(builtInMethod) {
-    return function(...nodes) {
+    return function (...nodes) {
       /**
        * A copy of `nodes`, with any DocumentFragment replaced by its children.
        * @type {!Array<!Node>}
@@ -81,7 +80,7 @@ export default function(internals, destination, builtIn) {
       /**
        * @param {...(!Node|string)} nodes
        */
-      function(...nodes) {
+      function (...nodes) {
         /**
          * A copy of `nodes`, with any DocumentFragment replaced by its children.
          * @type {!Array<!Node>}
@@ -128,11 +127,11 @@ export default function(internals, destination, builtIn) {
           }
         }
       });
-    }
+  }
 
   if (builtIn.remove !== undefined) {
     Utilities.setPropertyUnchecked(destination, 'remove',
-      function() {
+      function () {
         const wasConnected = Utilities.isConnected(this);
 
         builtIn.remove.call(this);

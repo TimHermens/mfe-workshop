@@ -95,7 +95,7 @@
    */
   let userConstruction = false;
 
-  window.HTMLElement = function() {
+  window.HTMLElement = function () {
     if (!browserConstruction) {
       const tagname = tagnameByConstructor.get(this.constructor);
       const fakeClass = nativeGet.call(window.customElements, tagname);
@@ -155,10 +155,10 @@
   // Workaround for Safari bug where patching customElements can be lost, likely
   // due to native wrapper garbage collection issue
   Object.defineProperty(window, 'customElements',
-    {value: window.customElements, configurable: true, writable: true});
+    { value: window.customElements, configurable: true, writable: true });
   Object.defineProperty(window.customElements, 'define',
-    {value: define, configurable: true, writable: true});
+    { value: define, configurable: true, writable: true });
   Object.defineProperty(window.customElements, 'get',
-    {value: get, configurable: true, writable: true});
+    { value: get, configurable: true, writable: true });
 
 })();

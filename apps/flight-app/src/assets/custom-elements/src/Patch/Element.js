@@ -1,5 +1,4 @@
 import Native from './Native.js';
-import CustomElementInternals from '../CustomElementInternals.js';
 import CEState from '../CustomElementState.js';
 import * as Utilities from '../Utilities.js';
 
@@ -9,7 +8,7 @@ import PatchChildNode from './Interface/ChildNode.js';
 /**
  * @param {!CustomElementInternals} internals
  */
-export default function(internals) {
+export default function (internals) {
   if (Native.Element_attachShadow) {
     Utilities.setPropertyUnchecked(Element.prototype, 'attachShadow',
       /**
@@ -17,7 +16,7 @@ export default function(internals) {
        * @param {!{mode: string}} init
        * @return {ShadowRoot}
        */
-      function(init) {
+      function (init) {
         const shadowRoot = Native.Element_attachShadow.call(this, init);
         this.__CE_shadowRoot = shadowRoot;
         return shadowRoot;
@@ -30,7 +29,7 @@ export default function(internals) {
       enumerable: baseDescriptor.enumerable,
       configurable: true,
       get: baseDescriptor.get,
-      set: /** @this {Element} */ function(htmlString) {
+      set: /** @this {Element} */ function (htmlString) {
         const isConnected = Utilities.isConnected(this);
 
         // NOTE: In IE11, when using the native `innerHTML` setter, all nodes
@@ -78,20 +77,20 @@ export default function(internals) {
     patch_innerHTML(HTMLElement.prototype, Native.HTMLElement_innerHTML);
   } else {
 
-    internals.addPatch(function(element) {
+    internals.addPatch(function (element) {
       patch_innerHTML(element, {
         enumerable: true,
         configurable: true,
         // Implements getting `innerHTML` by performing an unpatched `cloneNode`
         // of the element and returning the resulting element's `innerHTML`.
         // TODO: Is this too expensive?
-        get: /** @this {Element} */ function() {
+        get: /** @this {Element} */ function () {
           return Native.Node_cloneNode.call(this, true).innerHTML;
         },
         // Implements setting `innerHTML` by creating an unpatched element,
         // setting `innerHTML` of that element and replacing the target
         // element's children with those of the unpatched element.
-        set: /** @this {Element} */ function(assignedValue) {
+        set: /** @this {Element} */ function (assignedValue) {
           // NOTE: re-route to `content` for `template` elements.
           // We need to do this because `template.appendChild` does not
           // route into `template.content`.
@@ -101,7 +100,7 @@ export default function(internals) {
             (this)).content : this;
           /** @type {!Node} */
           const rawElement = Native.Document_createElementNS.call(document,
-              this.namespaceURI, this.localName);
+            this.namespaceURI, this.localName);
           rawElement.innerHTML = assignedValue;
 
           while (content.childNodes.length > 0) {
@@ -123,7 +122,7 @@ export default function(internals) {
      * @param {string} name
      * @param {string} newValue
      */
-    function(name, newValue) {
+    function (name, newValue) {
       // Fast path for non-custom elements.
       if (this.__CE_state !== CEState.custom) {
         return Native.Element_setAttribute.call(this, name, newValue);
@@ -142,7 +141,7 @@ export default function(internals) {
      * @param {string} name
      * @param {string} newValue
      */
-    function(namespace, name, newValue) {
+    function (namespace, name, newValue) {
       // Fast path for non-custom elements.
       if (this.__CE_state !== CEState.custom) {
         return Native.Element_setAttributeNS.call(this, namespace, name, newValue);
@@ -159,7 +158,7 @@ export default function(internals) {
      * @this {Element}
      * @param {string} name
      */
-    function(name) {
+    function (name) {
       // Fast path for non-custom elements.
       if (this.__CE_state !== CEState.custom) {
         return Native.Element_removeAttribute.call(this, name);
@@ -178,7 +177,7 @@ export default function(internals) {
      * @param {?string} namespace
      * @param {string} name
      */
-    function(namespace, name) {
+    function (namespace, name) {
       // Fast path for non-custom elements.
       if (this.__CE_state !== CEState.custom) {
         return Native.Element_removeAttributeNS.call(this, namespace, name);
@@ -204,7 +203,7 @@ export default function(internals) {
        * @param {!Element} element
        * @return {?Element}
        */
-      function(position, element) {
+      function (position, element) {
         const wasConnected = Utilities.isConnected(element);
         const insertedElement = /** @type {!Element} */
           (baseMethod.call(this, position, element));
@@ -253,7 +252,7 @@ export default function(internals) {
        * @param {string} position
        * @param {string} text
        */
-      function(position, text) {
+      function (position, text) {
         position = position.toLowerCase();
 
         if (position === "beforebegin") {

@@ -5,6 +5,7 @@
  *
  * https://html.spec.whatwg.org/#concept-already-constructed-marker
  */
-class AlreadyConstructedMarker {}
+class AlreadyConstructedMarker {
+}
 
 export default new AlreadyConstructedMarker();

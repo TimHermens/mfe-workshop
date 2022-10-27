@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: [ './home.component.css' ],
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
     return this._userName;
   }
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {
+  }
 
   changed($event: CustomEvent): void {
     console.debug('$event.detail ', $event.detail);

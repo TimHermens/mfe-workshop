@@ -1,10 +1,9 @@
-import CustomElementInternals from '../../CustomElementInternals.js';
 import * as Utilities from '../../Utilities.js';
 
 /**
  * @typedef {{
  *   prepend: !function(...(!Node|string)),
-  *  append: !function(...(!Node|string)),
+ *  append: !function(...(!Node|string)),
  * }}
  */
 let ParentNodeNativeMethods;
@@ -14,13 +13,13 @@ let ParentNodeNativeMethods;
  * @param {!Object} destination
  * @param {!ParentNodeNativeMethods} builtIn
  */
-export default function(internals, destination, builtIn) {
+export default function (internals, destination, builtIn) {
   /**
    * @param {!function(...(!Node|string))} builtInMethod
    * @return {!function(...(!Node|string))}
    */
   function appendPrependPatch(builtInMethod) {
-    return function(...nodes) {
+    return function (...nodes) {
       /**
        * A copy of `nodes`, with any DocumentFragment replaced by its children.
        * @type {!Array<!Node>}

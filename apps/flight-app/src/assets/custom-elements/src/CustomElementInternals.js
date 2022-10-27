@@ -209,7 +209,7 @@ export default class CustomElementInternals {
             const clonedVisitedImports = new Set(visitedImports);
             clonedVisitedImports.delete(importNode);
 
-            this.patchAndUpgradeTree(importNode, {visitedImports: clonedVisitedImports, upgrade});
+            this.patchAndUpgradeTree(importNode, { visitedImports: clonedVisitedImports, upgrade });
           });
         }
       } else {

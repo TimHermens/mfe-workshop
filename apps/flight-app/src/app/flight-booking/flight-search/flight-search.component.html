@@ -25,12 +25,12 @@
 
       <div class="form-group">
         <button (click)="search()" [disabled]="!from || !to"
-          class="btn btn-default">
+                class="btn btn-default">
           Search
         </button>
 
         <button *ngIf="flights.length > 0" class="btn btn-default"
-          (click)="delay()">
+                (click)="delay()">
           Delay 1st Flight
         </button>
 

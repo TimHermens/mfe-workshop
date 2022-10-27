@@ -8,23 +8,26 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-suite('Closure ES5 Output', function() {
+suite('Closure ES5 Output', function () {
 
   customElements.enableFlush = true;
 
   // Fails at a.prototype.constructor = a;
   // Closure needs to use Object.defineProperty?
-  test.skip('Closure generated ES5 works', function() {
+  test.skip('Closure generated ES5 works', function () {
     'use strict';
 
     // Closure standard library code
-    var $jscomp = {scope:{}, getGlobal:function(a) {
-      return "undefined" != typeof window && window === a ? a : "undefined" != typeof global ? global : a;
-    }};
+    var $jscomp = {
+      scope: {}, getGlobal: function (a) {
+        return "undefined" != typeof window && window === a ? a : "undefined" != typeof global ? global : a;
+      }
+    };
     $jscomp.global = $jscomp.getGlobal(this);
-    $jscomp.inherits = function(a, b) {
+    $jscomp.inherits = function (a, b) {
       function c() {
       }
+
       c.prototype = b.prototype;
       a.prototype = new c;
       a.prototype.constructor = a;
@@ -39,7 +42,7 @@ suite('Closure ES5 Output', function() {
     };
 
     // Compiled test
-    var XFoo = function(a) {
+    var XFoo = function (a) {
       HTMLElement.apply(this, arguments);
     };
     $jscomp.inherits(XFoo, HTMLElement);
