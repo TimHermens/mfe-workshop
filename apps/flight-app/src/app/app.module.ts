@@ -8,7 +8,6 @@ import { FlightLibModule } from '@flight-workspace/flight-lib';
 
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
-import { BasketComponent } from './basket/basket.component';
 import { FlightBookingModule } from './flight-booking/flight-booking.module';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -33,7 +32,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent,
     NavbarComponent,
     HomeComponent,
-    BasketComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]

@@ -6,7 +6,7 @@
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/passenger-e2e/cypress.json",
+        "cypressConfig": "apps/passenger-e2e/cypress.config.ts",
         "devServerTarget": "passenger:serve:development"
       },
       "configurations": {

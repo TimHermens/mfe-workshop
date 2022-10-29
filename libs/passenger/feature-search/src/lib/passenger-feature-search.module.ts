@@ -4,15 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LetModule } from '@ngrx/component';
 import { SearchComponent } from './search.component';
-
-// import { PassengerDomainModule } from '@flight-workspace/passenger/domain';
+import { PassengerDomainModule } from '@flight-workspace/passenger/domain';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     LetModule,
-    // RouterModule.forChild([])
     RouterModule.forChild([
       {
         path: '',
@@ -20,8 +18,7 @@ import { SearchComponent } from './search.component';
         component: SearchComponent
       }
     ]),
-    // LetModule,
-    // PassengerDomainModule
+    PassengerDomainModule
   ],
   declarations: [SearchComponent],
   exports: [SearchComponent],

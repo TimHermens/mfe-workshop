@@ -6,7 +6,7 @@
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/flight-app-e2e/cypress.json",
+        "cypressConfig": "apps/flight-app-e2e/cypress.config.ts",
         "devServerTarget": "flight-app:serve:development"
       },
       "configurations": {
