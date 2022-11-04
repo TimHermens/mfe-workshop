@@ -1,0 +1,14 @@
+import * as ts from 'typescript';
+import { Change } from '@schematics/angular/utility/change';
+import { Tree } from '@nrwl/devkit';
+export declare function findVariableNode(source: ts.Node, name: string): ts.VariableStatement | null;
+export declare function findVariableDeclarationNode(source: ts.Node, name: string): ts.VariableDeclaration | null;
+export declare function findClassDeclarationNode(source: ts.Node, name: string): ts.ClassDeclaration | null;
+export declare function findPropertyNode(source: ts.Node, name: string): ts.PropertyDeclaration;
+export declare function findGenericNode<T extends ts.NamedDeclaration>(source: ts.Node, name: string, kind: ts.SyntaxKind): T | null;
+export declare function importModuleInFile(source: ts.Node, barrelIndexPath: string, symbolName: string, fileName: string, isDefault?: boolean): Change[];
+export declare function arrayUnshift(node: ts.VariableStatement, barrelIndexPath: string, toAdd: string): Change[];
+export declare function classMethodPush(node: ts.ClassDeclaration, barrelIndexPath: string, methodToAdd: string, toAdd: string): Change[];
+export declare function objectPush(node: ts.PropertyDeclaration, barrelIndexPath: string, toAdd: string): Change[];
+export declare function variablePush(node: ts.VariableDeclaration, barrelIndexPath: string, toAdd: string): Change[];
+export declare const getTypeScriptSourceFile: (host: Tree, path: string) => ts.SourceFile;

@@ -1,4 +1,5 @@
 {
+  "name": "flight-lib",
   "projectType": "library",
   "sourceRoot": "libs/flight-lib/src",
   "prefix": "flight-workspace",

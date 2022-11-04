@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "preserveSymlinks": true,
+    "allowJs": true,
+    "composite": true
+  },
+  "include": ["src/**/*", "src/**/*.d.ts"],
+  "exclude": ["node_modules", "src/**/files/**/*"]
+}

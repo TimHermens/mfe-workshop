@@ -12,7 +12,7 @@ export class NavbarComponent {
   sidebarToggle() {
     const body = document.getElementsByTagName('body')[0];
 
-    if (this.sidebarVisible === false) {
+    if (!this.sidebarVisible) {
       body.classList.add('nav-open');
       this.sidebarVisible = true;
     } else {

@@ -1,4 +1,5 @@
 {
+  "name": "logger-lib",
   "projectType": "library",
   "sourceRoot": "libs/logger-lib/src",
   "prefix": "flight-workspace",

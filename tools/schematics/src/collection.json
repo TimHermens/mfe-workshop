@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "flight-workspace-collection",
+  "version": "0.0.1",
+  "extends": ["@nrwl/angular", "@angular-architects/ddd"],
+  "schematics": {
+    "page": {
+      "factory": "./page",
+      "schema": "./page/schema.json",
+      "description": "Create new Senses 2 page"
+    }
+  }
+}

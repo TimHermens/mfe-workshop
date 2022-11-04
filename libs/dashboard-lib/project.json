@@ -1,4 +1,5 @@
 {
+  "name": "dashboard-lib",
   "projectType": "library",
   "sourceRoot": "libs/dashboard-lib/src",
   "prefix": "flight-workspace",

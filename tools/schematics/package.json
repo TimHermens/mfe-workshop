@@ -1,0 +1,11 @@
+{
+  "name": "@flight-workspace/schematics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Schematics specific to Senses",
+  "schematics": "./src/collection.json",
+  "scripts": {
+    "build": "node ./scripts/build-schematics.js",
+    "clean": "rimraf 'tools/schematics/src/*/*.{js,d.ts,map}'"
+  }
+}

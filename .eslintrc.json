@@ -13,6 +13,65 @@
             "allow": [],
             "depConstraints": [
               {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:page",
+                  "type:api",
+                  "type:feature",
+                  "type:ui",
+                  "type:domain-logic",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:page",
+                "onlyDependOnLibsWithTags": [
+                  "type:page",
+                  "type:api",
+                  "type:feature",
+                  "type:ui",
+                  "type:domain-logic",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:api",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui", "type:domain-logic", "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui", "type:domain-logic", "type:util", "type:api"
+                ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "type:domain-logic",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:domain-logic",
+                "onlyDependOnLibsWithTags": [
+                  "type:util"
+                ]
+              },
+
+
+              {
+                "sourceTag": "domain:shared",
+                "onlyDependOnLibsWithTags": [
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:flight-app",
+                "onlyDependOnLibsWithTags": ["domain:flight-app", "domain:flights", "domain:shared"]
+              },
+              {
                 "sourceTag": "domain:flights",
                 "onlyDependOnLibsWithTags": ["domain:flights", "domain:shared"]
               },
@@ -24,15 +83,15 @@
                 ]
               },
               {
-                "sourceTag": "domain:external",
-                "onlyDependOnLibsWithTags": ["domain:external", "domain:shared"]
-              },
-              {
                 "sourceTag": "domain:passenger",
                 "onlyDependOnLibsWithTags": [
                   "domain:passenger",
                   "domain:shared"
                 ]
+              },
+              {
+                "sourceTag": "domain:luggage",
+                "onlyDependOnLibsWithTags": ["domain:luggage", "domain:shared"]
               }
             ]
           }

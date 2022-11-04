@@ -16,26 +16,24 @@
     </li>
 
     <li routerLinkActive="active">
-      <a routerLink="flight-booking/flight-search">
+      <a routerLink="flights">
         <i class="ti-arrow-top-right"></i>
         <p>Flights</p>
       </a>
     </li>
 
     <li routerLinkActive="active">
-      <a [routerLink]="[{ outlets: { aux: 'basket' } }]">
-        <i class="ti-shopping-cart"></i>
-        <p>Basket</p>
+      <a routerLink="passengers">
+        <i class="ti-user"></i>
+        <p>Passengers</p>
       </a>
     </li>
 
-    <!--
-        <li routerLinkActive="active">
-        <a>
-            <i class="ti-close"></i>
-            <p>Hide Basket</p>
-        </a>
-        </li>
-    -->
+    <li routerLinkActive="active">
+      <a routerLink="airports">
+        <i class="ti-signal"></i>
+        <p>Airports</p>
+      </a>
+    </li>
   </ul>
 </div>

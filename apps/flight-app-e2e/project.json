@@ -1,5 +1,5 @@
 {
-  "root": "apps/flight-app-e2e",
+  "name": "flight-app-e2e",
   "sourceRoot": "apps/flight-app-e2e/src",
   "projectType": "application",
   "targets": {

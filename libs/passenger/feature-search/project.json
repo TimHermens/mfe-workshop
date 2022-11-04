@@ -1,4 +1,5 @@
 {
+  "name": "passenger-feature-search",
   "projectType": "library",
   "sourceRoot": "libs/passenger/feature-search/src",
   "prefix": "flight-workspace",
