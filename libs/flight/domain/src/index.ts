@@ -1,5 +1,5 @@
-export { EditFlightFacade } from './lib/application/edit-flight.facade';
-export { SearchFlightsFacade } from './lib/application/search-flights.facade';
-export { Top5FlightsFacade } from './lib/application/top5-flights.facade';
-export { Flight } from './lib/entities/flight';
-export { FlightDataService } from './lib/infrastructure/flight.data.service';
+export * from './lib/application/edit-flight.facade';
+export * from './lib/application/search-flights.facade';
+export * from './lib/application/top5-flights.facade';
+export * from './lib/entities/flight';
+export * from './lib/infrastructure/flight.data.service';

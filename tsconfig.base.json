@@ -29,6 +29,7 @@
         "libs/flight/pages/page-flight-home/_index/index.ts"
       ],
       "@flight-workspace/flight-ui": ["libs/flight/ui/src/index.ts"],
+      "@flight-workspace/shared-ui": ["libs/shared/ui/src/index.ts"],
       "@flight-workspace/shared-util": ["libs/shared/util/src/index.ts"]
     }
   },

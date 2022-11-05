@@ -1,1 +1,1 @@
-export { FlightHomeModule } from './flight-home.module';
+export * from './flight-home.module';

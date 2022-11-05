@@ -1,2 +1,2 @@
-export { FlightSearchComponent } from './lib/flight-search/flight-search.component';
-export { FlightSearchFeatureModule } from './lib/flight-search/flight-search-feature.module';
+export * from './lib/flight-search/flight-search.component';
+export * from './lib/flight-search/flight-search-feature.module';

@@ -1,1 +1,1 @@
-export { FlightEditModule } from './flight-edit.module';
+export * from './flight-edit.module';
