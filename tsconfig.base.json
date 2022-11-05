@@ -39,6 +39,9 @@
       "@flight-workspace/passenger-domain": [
         "libs/passenger/domain/src/index.ts"
       ],
+      "@flight-workspace/passenger-features-passenger-edit": [
+        "libs/passenger/features/passenger-edit/src/index.ts"
+      ],
       "@flight-workspace/passenger-ui": ["libs/passenger/ui/src/index.ts"],
       "@flight-workspace/shared-ui": ["libs/shared/ui/src/index.ts"],
       "@flight-workspace/shared-util": ["libs/shared/util/src/index.ts"]
