@@ -1,0 +1,43 @@
+{
+  "name": "flight-features-flight-edit",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/flight/features/flight-edit/src",
+  "prefix": "feature",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/flight/features/flight-edit"],
+      "options": {
+        "project": "libs/flight/features/flight-edit/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/flight/features/flight-edit/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/flight/features/flight-edit/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/flight/features/flight-edit"],
+      "options": {
+        "jestConfig": "libs/flight/features/flight-edit/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/flight/features/flight-edit/**/*.ts",
+          "libs/flight/features/flight-edit/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:flight", "type:page"]
+}

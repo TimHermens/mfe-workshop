@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
   "name": "flight-page-flight-edit",
+  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/flight/pages/page-flight-home/page-flight-edit/_index",
   "projectType": "library",
   "prefix": "page",
