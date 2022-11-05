@@ -1,39 +1,37 @@
 <ng-container *ngrxLet="passengerList$ | async as passengers">
-
   <div class="card">
-
     <div class="header">
       <h2 class="title">Passenger Search</h2>
     </div>
     <div class="content">
-
       <form>
-
         <div class="form-group">
           <label>Firstname:</label>
-          <input [(ngModel)]="firstname" name="firstname" class="form-control">
+          <input
+            [(ngModel)]="firstname"
+            name="firstname"
+            class="form-control"
+          />
         </div>
         <div class="form-group">
           <label>Name:</label>
-          <input [(ngModel)]="name" name="name" class="form-control">
+          <input [(ngModel)]="name" name="name" class="form-control" />
         </div>
 
         <div class="form-group">
-          <button (click)="load()"
-            class="btn btn-default">
-            Search
-          </button>
+          <button (click)="load()" class="btn btn-default">Search</button>
 
           <div *ngIf="passengers!.length > 0">
             {{ passengers!.length }} passengers found!
           </div>
-
         </div>
       </form>
-
     </div>
   </div>
 
-  <passenger-table [editable]="true" [passengers]="passengers!" (editClicked)="onEditClicked($event)"></passenger-table>
-
+  <passenger-table
+    [editable]="true"
+    [passengers]="passengers!"
+    (editClicked)="onEditClicked($event)"
+  ></passenger-table>
 </ng-container>

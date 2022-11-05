@@ -1,36 +1,33 @@
 <ng-container *ngrxLet="flights$ | async as flights">
   <div class="card">
-
     <div class="header">
       <h2 class="title">Flight Search</h2>
     </div>
     <div class="content">
-
       <form>
         <div class="form-group">
           <label>From:</label>
-          <input [(ngModel)]="from" name="from" class="form-control">
+          <input [(ngModel)]="from" name="from" class="form-control" />
         </div>
         <div class="form-group">
           <label>To:</label>
-          <input [(ngModel)]="to" name="to" class="form-control">
+          <input [(ngModel)]="to" name="to" class="form-control" />
         </div>
 
         <div class="form-group">
-          <button (click)="search()"
-                  class="btn btn-default">
-            Search
-          </button>
+          <button (click)="search()" class="btn btn-default">Search</button>
 
           <div *ngIf="flights!.length > 0">
-            {{flights!.length}} flights found!
+            {{ flights!.length }} flights found!
           </div>
-
         </div>
       </form>
-
     </div>
   </div>
 
-  <flight-card-list [flights]="flights!" [editable]="true" (editClicked)="onEditClicked($event)"></flight-card-list>
+  <flight-card-list
+    [flights]="flights!"
+    [editable]="true"
+    (editClicked)="onEditClicked($event)"
+  ></flight-card-list>
 </ng-container>
