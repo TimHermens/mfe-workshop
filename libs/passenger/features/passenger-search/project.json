@@ -1,0 +1,43 @@
+{
+  "name": "passenger-features-passenger-search",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/passenger/features/passenger-search/src",
+  "prefix": "feature",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/passenger/features/passenger-search"],
+      "options": {
+        "project": "libs/passenger/features/passenger-search/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/passenger/features/passenger-search/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/passenger/features/passenger-search/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/passenger/features/passenger-search"],
+      "options": {
+        "jestConfig": "libs/passenger/features/passenger-search/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/passenger/features/passenger-search/**/*.ts",
+          "libs/passenger/features/passenger-search/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:passenger", "type:page"]
+}

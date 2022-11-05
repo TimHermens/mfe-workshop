@@ -15,6 +15,7 @@
     "home-page-home": "libs/home/pages/page-home/_index",
     "passenger-domain": "libs/passenger/domain",
     "passenger-features-passenger-edit": "libs/passenger/features/passenger-edit",
+    "passenger-features-passenger-search": "libs/passenger/features/passenger-search",
     "passenger-ui": "libs/passenger/ui",
     "schematics": "tools/schematics",
     "shared-ui": "libs/shared/ui",
