@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Passenger, SearchFacade } from '@flight-workspace/passenger/domain';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { SearchPassengersFacade } from "../../services/search-passengers.facade";
+import { Passenger } from "../../models/passenger";
 
 @Component({
   selector: 'feature-passenger-search',
@@ -7,18 +8,19 @@ import { Passenger, SearchFacade } from '@flight-workspace/passenger/domain';
   styleUrls: ['./passenger-search.component.css'],
 })
 export class PassengerSearchComponent {
-  firstname = '';
-  name = 'Smith';
-  passengerList$ = this.searchFacade.passengerList$;
-  selectedPassenger: Passenger | undefined;
+  @Output() editClicked = new EventEmitter<Passenger>();
 
-  constructor(private searchFacade: SearchFacade) {}
+  firstname = '';
+  name = '';
+  passengerList$ = this.searchFacade.passengerList$;
+
+  constructor(private readonly searchFacade: SearchPassengersFacade) {}
 
   load(): void {
-    this.searchFacade.load(this.name, this.firstname);
+    this.searchFacade.findPassengers(this.name, this.firstname);
   }
 
-  toggleSelection(p: Passenger) {
-    this.selectedPassenger = p;
+  onEditClicked(passenger: Passenger) {
+    this.editClicked.next(passenger);
   }
 }

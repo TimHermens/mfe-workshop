@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { Observable } from "rxjs";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Flight } from "../../models/flight";
 import { SearchFlightsFacade } from "../../services/search-flights.facade";
 
@@ -10,17 +8,16 @@ import { SearchFlightsFacade } from "../../services/search-flights.facade";
   styleUrls: [ './flight-search.component.css' ]
 })
 export class FlightSearchComponent {
+  @Output() editClicked = new EventEmitter<Flight>();
 
-  flights$: Observable<Flight[]> = this.searchFlightsFacade.flights$;
+  flights$ = this.searchFlightsFacade.flights$;
   from = '';
   to = '';
 
   selected: { [id: number]: boolean } = {};
 
   constructor(
-    private readonly searchFlightsFacade: SearchFlightsFacade,
-    private readonly router: Router,
-    private readonly activatedRoute: ActivatedRoute) {
+    private readonly searchFlightsFacade: SearchFlightsFacade) {
   }
 
   search(): void {
@@ -29,6 +26,6 @@ export class FlightSearchComponent {
   }
 
   onEditClicked(flight: Flight) {
-    this.router.navigate([flight.id], {relativeTo: this.activatedRoute});
+    this.editClicked.next(flight);
   }
 }

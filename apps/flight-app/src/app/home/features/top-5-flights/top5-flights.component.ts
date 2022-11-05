@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Flight, Top5FlightsFacade } from "@flight-workspace/flight-lib";
 import { Observable } from "rxjs";
+import { Flight } from "../../../flights/models/flight";
+import { Top5FlightsFacade } from "../../../flights/services/top5-flights.facade";
 
 @Component({
   selector: 'top5-flights',

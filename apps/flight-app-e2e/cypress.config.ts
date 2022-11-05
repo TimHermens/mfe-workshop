@@ -4,7 +4,7 @@ export default defineConfig({
   e2e: {
     fileServerFolder: ".",
     fixturesFolder: "./src/fixtures",
-    specPattern: "./src/integration",
+    specPattern: "./src/integration/**/*.spec.ts",
     modifyObstructiveCode: false,
     supportFile: "./src/support/index.ts",
     video: true,

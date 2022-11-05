@@ -35,15 +35,15 @@
                 ]
               },
               {
-                "sourceTag": "type:api",
-                "onlyDependOnLibsWithTags": [
-                  "type:ui", "type:domain-logic", "type:util"
-                ]
-              },
-              {
                 "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": [
                   "type:ui", "type:domain-logic", "type:util", "type:api"
+                ]
+              },
+              {
+                "sourceTag": "type:api",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui", "type:domain-logic", "type:util"
                 ]
               },
               {
@@ -69,29 +69,7 @@
               },
               {
                 "sourceTag": "domain:flight-app",
-                "onlyDependOnLibsWithTags": ["domain:flight-app", "domain:flights", "domain:shared"]
-              },
-              {
-                "sourceTag": "domain:flights",
-                "onlyDependOnLibsWithTags": ["domain:flights", "domain:shared"]
-              },
-              {
-                "sourceTag": "domain:dashboard",
-                "onlyDependOnLibsWithTags": [
-                  "domain:dashboard",
-                  "domain:shared"
-                ]
-              },
-              {
-                "sourceTag": "domain:passenger",
-                "onlyDependOnLibsWithTags": [
-                  "domain:passenger",
-                  "domain:shared"
-                ]
-              },
-              {
-                "sourceTag": "domain:luggage",
-                "onlyDependOnLibsWithTags": ["domain:luggage", "domain:shared"]
+                "onlyDependOnLibsWithTags": ["domain:flight-app", "domain:shared"]
               }
             ]
           }

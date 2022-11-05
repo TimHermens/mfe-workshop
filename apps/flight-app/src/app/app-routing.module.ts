@@ -9,13 +9,18 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module')
-      .then(m => m.HomeModule)
+    loadChildren: () => import('./home/pages/home/home-page.module')
+      .then(m => m.HomePageModule)
   },
   {
     path: 'flights',
-    loadChildren: () => import('./flights/flights.module')
-      .then(m => m.FlightsModule)
+    loadChildren: () => import('./flights/pages/flight-home/flight-home-page.module')
+      .then(m => m.FlightHomePageModule)
+  },
+  {
+    path: 'passengers',
+    loadChildren: () => import('./passengers/pages/passenger-home/passenger-home-page.module')
+      .then(m => m.PassengerHomePageModule)
   },
   {
     path: '**',

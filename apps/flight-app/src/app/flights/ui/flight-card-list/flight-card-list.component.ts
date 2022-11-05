@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Observable } from "rxjs";
 import { Flight } from "../../models/flight";
 
 @Component({
@@ -8,7 +7,7 @@ import { Flight } from "../../models/flight";
   styleUrls: [ './flight-card-list.component.css' ]
 })
 export class FlightCardListComponent {
-  @Input() flights$: Observable<Flight[]> | undefined;
+  @Input() flights: Flight[] = [];
   @Input() editable = false;
   @Output() editClicked = new EventEmitter<Flight>();
 

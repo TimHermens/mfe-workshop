@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Flight } from "../models/flight";
 import { LoggerService } from "../../shared/util/logger/logger.service";
-import { FlightService } from "./flight.service";
+import { FlightDataService } from "./flight.data.service";
 
 
 @Injectable({ providedIn: 'root' })
@@ -10,7 +10,7 @@ export class EditFlightFacade {
   private readonly flightSubject = new BehaviorSubject<Flight | undefined>(undefined);
   readonly flight$ = this.flightSubject.asObservable();
 
-  constructor(private readonly flightService: FlightService,
+  constructor(private readonly flightService: FlightDataService,
               private readonly logger: LoggerService) {}
 
   findFlightById(id: string): void {

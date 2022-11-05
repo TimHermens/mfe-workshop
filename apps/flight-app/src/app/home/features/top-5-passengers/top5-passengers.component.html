@@ -1,8 +1,8 @@
 <div class="card" style="background-color: #BBB">
   <div class="header">
-    <h2 class="title">Top 5 flights</h2>
+    <h2 class="title">Top 5 passengers</h2>
     <div class="content"></div>
   </div>
 </div>
 
-<flight-card-list [flights]="(flights$ | async)!"></flight-card-list>
+<passenger-table [passengers]="(passengers$ | async)!"></passenger-table>

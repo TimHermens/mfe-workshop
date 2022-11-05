@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Flight } from '../models/flight';
-import { FlightService } from "./flight.service";
+import { FlightDataService } from "./flight.data.service";
 import { LoggerService } from "../../shared/util/logger/logger.service";
 
 @Injectable({ providedIn: 'root' })
@@ -9,7 +9,7 @@ export class Top5FlightsFacade {
   private readonly flightsSubject = new BehaviorSubject<Flight[]>([]);
   readonly flights$ = this.flightsSubject.asObservable();
 
-  constructor(private readonly flightService: FlightService,
+  constructor(private readonly flightService: FlightDataService,
               private readonly logger: LoggerService) {}
 
   findFlights(): void {
