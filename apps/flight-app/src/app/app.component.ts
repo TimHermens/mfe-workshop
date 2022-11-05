@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LuggageUtilModule } from '@flight-workspace/luggage-util';
 
 @Component({
   selector: 'flight-app',

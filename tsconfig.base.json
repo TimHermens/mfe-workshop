@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@flight-workspace/luggage-util": ["libs/luggage/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
