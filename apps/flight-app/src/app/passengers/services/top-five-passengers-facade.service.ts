@@ -5,7 +5,7 @@ import { Passenger } from '../models/passenger';
 import { PassengerDataService } from './passenger.data.service';
 
 @Injectable({ providedIn: 'root' })
-export class Top5PassengersFacade {
+export class TopFivePassengersFacade {
   private readonly passengersSubject = new BehaviorSubject<Passenger[]>([]);
   readonly passengers$ = this.passengersSubject.asObservable();
 
