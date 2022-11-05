@@ -17,8 +17,8 @@ const routes: Routes = [
   {
     path: 'flights',
     loadChildren: () =>
-      import('./flights/pages/flight-home/flight-home-page.module').then(
-        (m) => m.FlightHomePageModule
+      import('@flight-workspace/flight-page-flight-home').then(
+        (m) => m.FlightHomeModule
       ),
   },
   {

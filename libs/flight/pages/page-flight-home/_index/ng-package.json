@@ -1,0 +1,7 @@
+{
+  "$schema": "../../../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../../../dist/libs/flight/pages/page-flight-home/_index",
+  "lib": {
+    "entryFile": "index.ts"
+  }
+}

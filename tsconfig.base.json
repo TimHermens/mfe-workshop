@@ -16,6 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@flight-workspace/flight-domain": ["libs/flight/domain/src/index.ts"],
+      "@flight-workspace/flight-page-flight-edit": [
+        "libs/flight/pages/page-flight-home/page-flight-edit/_index/index.ts"
+      ],
+      "@flight-workspace/flight-page-flight-home": [
+        "libs/flight/pages/page-flight-home/_index/index.ts"
+      ],
       "@flight-workspace/shared-util": ["libs/shared/util/src/index.ts"]
     }
   },
