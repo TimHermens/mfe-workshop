@@ -6,7 +6,7 @@ import { FlightHomePageComponent } from './flight-home.page.component';
 const routes: Routes = [
   { path: '', component: FlightHomePageComponent },
   {
-    path: 'flight-edit',
+    path: ':id',
     loadChildren: () =>
       import('@flight-workspace/flight-page-flight-edit').then(
         (m) => m.FlightEditModule
