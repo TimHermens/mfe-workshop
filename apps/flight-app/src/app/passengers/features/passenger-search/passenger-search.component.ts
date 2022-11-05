@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { SearchPassengersFacade } from "../../services/search-passengers.facade";
-import { Passenger } from "../../models/passenger";
+import { SearchPassengersFacade } from '../../services/search-passengers.facade';
+import { Passenger } from '../../models/passenger';
 
 @Component({
   selector: 'feature-passenger-search',

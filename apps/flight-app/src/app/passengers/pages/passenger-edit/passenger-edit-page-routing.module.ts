@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PassengerEditPageComponent } from "./passenger-edit-page.component";
+import { PassengerEditPageComponent } from './passenger-edit-page.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: PassengerEditPageComponent
-  }
+    component: PassengerEditPageComponent,
+  },
 ];
 
 @NgModule({

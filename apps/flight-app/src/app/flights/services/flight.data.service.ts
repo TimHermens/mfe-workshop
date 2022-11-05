@@ -11,10 +11,7 @@ export class FlightDataService {
 
   constructor(private http: HttpClient) {}
 
-  find(
-    from = '',
-    to = ''
-  ): Observable<Flight[]> {
+  find(from = '', to = ''): Observable<Flight[]> {
     let params = new HttpParams();
     if (from) {
       params = params.set('from', from);

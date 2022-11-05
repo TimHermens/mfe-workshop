@@ -1,4 +1,3 @@
-
 export interface Flight {
   id: number;
   from: string;

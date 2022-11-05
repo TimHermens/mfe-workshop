@@ -9,18 +9,24 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/pages/home/home-page.module')
-      .then(m => m.HomePageModule)
+    loadChildren: () =>
+      import('./home/pages/home/home-page.module').then(
+        (m) => m.HomePageModule
+      ),
   },
   {
     path: 'flights',
-    loadChildren: () => import('./flights/pages/flight-home/flight-home-page.module')
-      .then(m => m.FlightHomePageModule)
+    loadChildren: () =>
+      import('./flights/pages/flight-home/flight-home-page.module').then(
+        (m) => m.FlightHomePageModule
+      ),
   },
   {
     path: 'passengers',
-    loadChildren: () => import('./passengers/pages/passenger-home/passenger-home-page.module')
-      .then(m => m.PassengerHomePageModule)
+    loadChildren: () =>
+      import(
+        './passengers/pages/passenger-home/passenger-home-page.module'
+      ).then((m) => m.PassengerHomePageModule),
   },
   {
     path: '**',

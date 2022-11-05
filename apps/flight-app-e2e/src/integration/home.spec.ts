@@ -1,4 +1,7 @@
-import { getTop5FlightsTitle, getTop5PassengersTitle } from '../support/home.po';
+import {
+  getTop5FlightsTitle,
+  getTop5PassengersTitle,
+} from '../support/home.po';
 
 describe('home page', () => {
   beforeEach(() => cy.visit('/'));
