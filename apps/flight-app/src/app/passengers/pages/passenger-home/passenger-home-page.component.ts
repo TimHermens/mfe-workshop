@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Passenger } from "../../models/passenger";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Passenger } from '../../models/passenger';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'page-passenger-home',
@@ -8,12 +8,12 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ['./passenger-home-page.component.css'],
 })
 export class PassengerHomePageComponent {
-
-  constructor(private readonly router: Router,
-              private readonly activatedRoute: ActivatedRoute) {
-  }
+  constructor(
+    private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute
+  ) {}
 
   onEditClicked(passenger: Passenger) {
-    this.router.navigate([passenger.id], {relativeTo: this.activatedRoute});
+    this.router.navigate([passenger.id], { relativeTo: this.activatedRoute });
   }
 }

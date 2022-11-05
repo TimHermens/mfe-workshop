@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Passenger } from "../../models/passenger";
+import { Passenger } from '../../models/passenger';
 
 @Component({
   selector: 'passenger-table',
   templateUrl: './passenger-table.component.html',
-  styleUrls: [ './passenger-table.component.css' ]
+  styleUrls: ['./passenger-table.component.css'],
 })
 export class PassengerTableComponent {
   @Input() passengers: Passenger[] = [];

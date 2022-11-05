@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FlightHomePageComponent } from "./flight-home-page.component";
+import { FlightHomePageComponent } from './flight-home-page.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: FlightHomePageComponent
+    component: FlightHomePageComponent,
   },
   {
     path: ':id',
-    loadChildren: () => import("../flight-edit/flight-edit-page.module")
-      .then(m => m.FlightEditPageModule)
-  }
+    loadChildren: () =>
+      import('../flight-edit/flight-edit-page.module').then(
+        (m) => m.FlightEditPageModule
+      ),
+  },
 ];
 
 @NgModule({

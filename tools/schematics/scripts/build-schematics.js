@@ -13,11 +13,13 @@ const env = {
   FORCE_COLOR: '0', // Override this, enabling it will cause `yarn bin` to yield white color codes
 };
 
-(async function() {
+(async function () {
   try {
-
     await rimraf('src/*/*.{spec.js,spec.d.ts,spec.js.map,js,js.map,d.ts}');
-    await exec(`tsc -p tsconfig.json`, { env, cwd: path.join(__dirname, '..')});
+    await exec(`tsc -p tsconfig.json`, {
+      env,
+      cwd: path.join(__dirname, '..'),
+    });
 
     console.log('Schematics compiled!');
   } catch (e) {

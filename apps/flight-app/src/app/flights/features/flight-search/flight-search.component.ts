@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Flight } from "../../models/flight";
-import { SearchFlightsFacade } from "../../services/search-flights.facade";
+import { Flight } from '../../models/flight';
+import { SearchFlightsFacade } from '../../services/search-flights.facade';
 
 @Component({
   selector: 'feature-flight-search',
   templateUrl: './flight-search.component.html',
-  styleUrls: [ './flight-search.component.css' ]
+  styleUrls: ['./flight-search.component.css'],
 })
 export class FlightSearchComponent {
   @Output() editClicked = new EventEmitter<Flight>();
@@ -16,13 +16,10 @@ export class FlightSearchComponent {
 
   selected: { [id: number]: boolean } = {};
 
-  constructor(
-    private readonly searchFlightsFacade: SearchFlightsFacade) {
-  }
+  constructor(private readonly searchFlightsFacade: SearchFlightsFacade) {}
 
   search(): void {
-    this.searchFlightsFacade
-      .findFlights(this.from, this.to);
+    this.searchFlightsFacade.findFlights(this.from, this.to);
   }
 
   onEditClicked(flight: Flight) {

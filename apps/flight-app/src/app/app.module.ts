@@ -14,11 +14,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     BrowserAnimationsModule,
     PageRoutingModule,
   ],
-  declarations: [
-    AppComponent,
-    SidebarComponent,
-    NavbarComponent,
-  ],
+  declarations: [AppComponent, SidebarComponent, NavbarComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

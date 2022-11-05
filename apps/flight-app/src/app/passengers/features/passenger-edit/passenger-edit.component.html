@@ -5,12 +5,11 @@
 
   <div class="content">
     <ng-container *ngIf="passenger$ | async as passenger">
-      <p>Id: {{passenger.id}}</p>
-      <p>First name: {{passenger.firstName}}</p>
-      <p>Name: {{passenger.name}}</p>
-      <p>Bonus miles: {{passenger.bonusMiles}}</p>
-      <p>Status: {{passenger.passengerStatus}}</p>
+      <p>Id: {{ passenger.id }}</p>
+      <p>First name: {{ passenger.firstName }}</p>
+      <p>Name: {{ passenger.name }}</p>
+      <p>Bonus miles: {{ passenger.bonusMiles }}</p>
+      <p>Status: {{ passenger.passengerStatus }}</p>
     </ng-container>
   </div>
 </div>
-
