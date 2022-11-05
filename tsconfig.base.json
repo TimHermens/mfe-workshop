@@ -19,6 +19,9 @@
       "@flight-workspace/flight-features-flight-edit": [
         "libs/flight/features/flight-edit/src/index.ts"
       ],
+      "@flight-workspace/flight-features-flight-search": [
+        "libs/flight/features/flight-search/src/index.ts"
+      ],
       "@flight-workspace/flight-page-flight-edit": [
         "libs/flight/pages/page-flight-home/page-flight-edit/_index/index.ts"
       ],
