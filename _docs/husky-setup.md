@@ -30,7 +30,7 @@ Modify `.husky/pre-commit` to execute linting on commits:
 yarn -s lint-staged
 ```
 
-Add pre-push hook `.husky/pre-push` to execute tests on pushes:
+Add a pre-push hook `.husky/pre-push` to execute tests on pushes:
 
 ```bash
 #!/usr/bin/env sh
@@ -39,7 +39,7 @@ Add pre-push hook `.husky/pre-push` to execute tests on pushes:
 yarn test
 ```
 
-Make the pre-push script executable:
+Make the pre-push script executable if it is not yet:
 
 ```bash
 chmod ug+x .husky/pre-push
