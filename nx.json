@@ -24,6 +24,11 @@
       }
     }
   },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  },
   "generators": {
     "@flight-workspace/schematics:application": {
       "style": "css",

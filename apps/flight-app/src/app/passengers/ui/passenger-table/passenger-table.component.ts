@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Passenger } from '../../models/passenger';
 
 @Component({
-  selector: 'passenger-table',
+  selector: 'ui-passenger-table',
   templateUrl: './passenger-table.component.html',
   styleUrls: ['./passenger-table.component.css'],
 })
