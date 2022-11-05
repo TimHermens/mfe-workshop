@@ -39,19 +39,6 @@
       "unitTestRunner": "jest",
       "buildable": true
     },
-    "@flight-workspace/schematics:feature": {
-      "type": "buildable",
-      "directory": "features"
-    },
-    "@flight-workspace/schematics:api": {
-      "type": "buildable"
-    },
-    "@flight-workspace/schematics:ui": {
-      "type": "buildable"
-    },
-    "@flight-workspace/schematics:util": {
-      "type": "buildable"
-    },
     "@flight-workspace/schematics:page": {
       "directory": "pages"
     },

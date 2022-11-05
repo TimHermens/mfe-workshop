@@ -19,7 +19,7 @@ const env = {
     await rimraf('src/*/*.{spec.js,spec.d.ts,spec.js.map,js,js.map,d.ts}');
     await exec(`tsc -p tsconfig.json`, { env, cwd: path.join(__dirname, '..')});
 
-    console.log('SENSES Schematics compiled!');
+    console.log('Schematics compiled!');
   } catch (e) {
     console.log(e);
     process.exit(1);

@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const devkit_1 = require("@nrwl/devkit");
 const angular_ast_utils_1 = require("../utils/angular-ast-utils");
 const typescript_1 = require("typescript");
+const workspace_1 = require("../utils/workspace");
 async function default_1(tree, schema) {
     try {
         const missingProperties = [];
@@ -25,7 +26,7 @@ async function default_1(tree, schema) {
             applicationName: applicationNames.fileName,
             domain: schema.domain,
             pageProjectName: `${schema.domain}-${prefix}-${pageNames.fileName}`,
-            pagePathAlias: `@flight-workspace/${schema.domain}-${prefix}-${pageNames.fileName}`,
+            pagePathAlias: `@${(0, workspace_1.getWorkspaceName)(tree)}/${schema.domain}-${prefix}-${pageNames.fileName}`,
             parentPageName: parentPageNames.fileName,
             hasParentPage: parentPageNames.fileName !== '' ? true : false,
             selector: schema.selector

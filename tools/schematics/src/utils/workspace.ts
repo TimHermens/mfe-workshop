@@ -9,7 +9,7 @@ import {
 } from '@schematics/angular/utility/change';
 
 import { ReplaceChange as ReplaceChangePos } from './changes';
-import { readProjectConfiguration, Tree } from '@nrwl/devkit';
+import { readProjectConfiguration, readWorkspaceConfiguration, Tree } from '@nrwl/devkit';
 
 export const readFile =
   (path: string) =>
@@ -65,3 +65,7 @@ export const getProjectSourceRoot = (
 
   return componentConfig.sourceRoot || componentConfig.root;
 };
+
+export function getWorkspaceName(tree: Tree): string {
+  return readWorkspaceConfiguration(tree).npmScope;
+}

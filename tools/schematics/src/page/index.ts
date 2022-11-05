@@ -16,6 +16,7 @@ import {
   ScriptTarget,
   createSourceFile,
 } from 'typescript';
+import { getWorkspaceName } from "../utils/workspace";
 
 interface PageProjectConfiguration extends ProjectConfiguration {
   prefix: string;
@@ -58,7 +59,7 @@ export default async function (tree: Tree, schema: Schema) {
       applicationName: applicationNames.fileName,
       domain: schema.domain,
       pageProjectName: `${schema.domain}-${prefix}-${pageNames.fileName}`,
-      pagePathAlias: `@flight-workspace/${schema.domain}-${prefix}-${pageNames.fileName}`,
+      pagePathAlias: `@${getWorkspaceName(tree)}/${schema.domain}-${prefix}-${pageNames.fileName}`,
       parentPageName: parentPageNames.fileName,
       hasParentPage: parentPageNames.fileName !== '' ? true : false,
       selector: schema.selector

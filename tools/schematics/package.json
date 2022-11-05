@@ -1,8 +1,8 @@
 {
   "name": "@flight-workspace/schematics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
-  "description": "Schematics specific to Senses",
+  "description": "Schematics",
   "schematics": "./src/collection.json",
   "scripts": {
     "build": "node ./scripts/build-schematics.js",

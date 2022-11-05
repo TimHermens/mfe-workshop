@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProjectSourceRoot = exports.insertChanges = exports.readFile = void 0;
+exports.getWorkspaceName = exports.getProjectSourceRoot = exports.insertChanges = exports.readFile = void 0;
 const change_1 = require("@schematics/angular/utility/change");
 const changes_1 = require("./changes");
 const devkit_1 = require("@nrwl/devkit");
@@ -45,4 +45,8 @@ const getProjectSourceRoot = (tree, projectName) => {
     return componentConfig.sourceRoot || componentConfig.root;
 };
 exports.getProjectSourceRoot = getProjectSourceRoot;
+function getWorkspaceName(tree) {
+    return (0, devkit_1.readWorkspaceConfiguration)(tree).npmScope;
+}
+exports.getWorkspaceName = getWorkspaceName;
 //# sourceMappingURL=workspace.js.map
