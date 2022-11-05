@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'; // test
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'flight-app',

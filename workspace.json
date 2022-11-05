@@ -4,7 +4,6 @@
   "projects": {
     "flight-app": "apps/flight-app",
     "flight-app-e2e": "apps/flight-app-e2e",
-    "luggage-util": "libs/luggage/util",
     "schematics": "tools/schematics"
   }
 }
