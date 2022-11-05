@@ -3,12 +3,11 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Passenger } from '../models/passenger';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class PassengerDataService {
   private readonly baseUrl = '/api/passenger';
 
-  constructor(private readonly http: HttpClient) {
-  }
+  constructor(private readonly http: HttpClient) {}
 
   find(name = '', firstname = ''): Observable<Passenger[]> {
     let params = new HttpParams();
@@ -16,7 +15,7 @@ export class PassengerDataService {
       params = params.set('name', name);
     }
     if (firstname) {
-      params = params.set('firstname', firstname);
+      params = params.set('firstName', firstname);
     }
 
     return this.http.get<Passenger[]>(this.baseUrl, { params });
