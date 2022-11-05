@@ -9,6 +9,7 @@
     "flight-features-flight-search": "libs/flight/features/flight-search",
     "flight-page-flight-edit": "libs/flight/pages/page-flight-home/page-flight-edit/_index",
     "flight-page-flight-home": "libs/flight/pages/page-flight-home/_index",
+    "flight-ui": "libs/flight/ui",
     "schematics": "tools/schematics",
     "shared-util": "libs/shared/util"
   }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Flight } from '../models/flight';
-import { LoggerService } from '../../shared/util/logger/logger.service';
-import { FlightDataService } from './flight.data.service';
+import { Flight } from '../entities/flight';
+import { LoggerService } from '@flight-workspace/shared-util';
+import { FlightDataService } from '../infrastructure/flight.data.service';
 
 @Injectable({ providedIn: 'root' })
 export class EditFlightFacade {

@@ -1,0 +1,13 @@
+<div *ngIf="item" class="card">
+  <div class="header">
+    <h2 class="title">{{ item.from }} - {{ item.to }}</h2>
+  </div>
+  <div class="content">
+    <p>Flight-No.: #{{ item.id }}</p>
+    <p>Date: {{ item.date | date: 'long' }}</p>
+
+    <p *ngIf="editable">
+      <a class="btn btn-default" (click)="onEditClicked()"> Edit </a>
+    </p>
+  </div>
+</div>
