@@ -37,5 +37,5 @@
       }
     }
   },
-  "tags": ["type:page", "domain:home"]
+  "tags": ["type:page", "domain:home", "domain:flight-app-entry-page"]
 }

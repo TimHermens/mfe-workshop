@@ -10,9 +10,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./home/pages/home/home-page.module').then(
-        (m) => m.HomePageModule
-      ),
+      import('@flight-workspace/home-page-home').then((m) => m.HomeModule),
   },
   {
     path: 'flights',
