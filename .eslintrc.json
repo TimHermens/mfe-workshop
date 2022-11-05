@@ -74,6 +74,10 @@
               {
                 "sourceTag": "domain:flight",
                 "onlyDependOnLibsWithTags": ["domain:flight", "domain:shared"]
+              },
+              {
+                "sourceTag": "domain:home",
+                "onlyDependOnLibsWithTags": ["domain:home", "domain:shared"]
               }
             ]
           }
