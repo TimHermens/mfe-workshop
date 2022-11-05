@@ -22,9 +22,9 @@ const routes: Routes = [
   {
     path: 'passengers',
     loadChildren: () =>
-      import(
-        './passengers/pages/passenger-home/passenger-home-page.module'
-      ).then((m) => m.PassengerHomePageModule),
+      import('@flight-workspace/passenger-page-passenger-home').then(
+        (m) => m.PassengerHomeModule
+      ),
   },
   {
     path: '**',

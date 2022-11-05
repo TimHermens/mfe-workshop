@@ -45,6 +45,9 @@
       "@flight-workspace/passenger-features-passenger-search": [
         "libs/passenger/features/passenger-search/src/index.ts"
       ],
+      "@flight-workspace/passenger-page-passenger-home": [
+        "libs/passenger/pages/page-passenger-home/_index/index.ts"
+      ],
       "@flight-workspace/passenger-ui": ["libs/passenger/ui/src/index.ts"],
       "@flight-workspace/shared-ui": ["libs/shared/ui/src/index.ts"],
       "@flight-workspace/shared-util": ["libs/shared/util/src/index.ts"]
