@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@flight-workspace/flight-api": ["libs/flight/api/src/index.ts"],
       "@flight-workspace/flight-domain": ["libs/flight/domain/src/index.ts"],
       "@flight-workspace/flight-features-flight-edit": [
         "libs/flight/features/flight-edit/src/index.ts"
@@ -29,6 +30,12 @@
         "libs/flight/pages/page-flight-home/_index/index.ts"
       ],
       "@flight-workspace/flight-ui": ["libs/flight/ui/src/index.ts"],
+      "@flight-workspace/home-features-top-five-flights": [
+        "libs/home/features/top-five-flights/src/index.ts"
+      ],
+      "@flight-workspace/home-page-home": [
+        "libs/home/pages/page-home/_index/index.ts"
+      ],
       "@flight-workspace/shared-ui": ["libs/shared/ui/src/index.ts"],
       "@flight-workspace/shared-util": ["libs/shared/util/src/index.ts"]
     }

@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "name": "home-page-home",
+  "sourceRoot": "libs/home/pages/page-home/_index",
+  "projectType": "library",
+  "prefix": "page",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/home/pages/page-home/_index"],
+      "options": {
+        "project": "libs/home/pages/page-home/_index/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/home/pages/page-home/_index/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/home/pages/page-home/_index/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/home/pages/page-home/_index/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/home/pages/page-home/_index/**/*.ts",
+          "libs/home/pages/page-home/_index/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["type:page", "domain:home"]
+}
