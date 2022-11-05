@@ -4,6 +4,8 @@
   "projects": {
     "flight-app": "apps/flight-app",
     "flight-app-e2e": "apps/flight-app-e2e",
-    "schematics": "tools/schematics"
+    "flight-domain": "libs/flight/domain",
+    "schematics": "tools/schematics",
+    "shared-util": "libs/shared/util"
   }
 }
