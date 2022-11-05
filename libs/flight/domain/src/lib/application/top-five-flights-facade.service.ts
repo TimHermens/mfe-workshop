@@ -5,7 +5,7 @@ import { FlightDataService } from '../infrastructure/flight.data.service';
 import { LoggerService } from '@flight-workspace/shared-util';
 
 @Injectable({ providedIn: 'root' })
-export class Top5FlightsFacade {
+export class TopFiveFlightsFacade {
   private readonly flightsSubject = new BehaviorSubject<Flight[]>([]);
   readonly flights$ = this.flightsSubject.asObservable();
 
