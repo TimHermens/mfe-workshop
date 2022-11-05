@@ -4,7 +4,7 @@ import { Passenger } from '../../../passengers/models/passenger';
 import { Top5PassengersFacade } from '../../../passengers/services/top5-passengers.facade';
 
 @Component({
-  selector: 'top5-passengers',
+  selector: 'feature-top5-passengers',
   templateUrl: './top5-passengers.component.html',
   styleUrls: ['./top5-passengers.component.css'],
 })

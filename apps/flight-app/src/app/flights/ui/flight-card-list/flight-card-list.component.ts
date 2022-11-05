@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Flight } from '../../models/flight';
 
 @Component({
-  selector: 'flight-card-list',
+  selector: 'ui-flight-card-list',
   templateUrl: './flight-card-list.component.html',
   styleUrls: ['./flight-card-list.component.css'],
 })

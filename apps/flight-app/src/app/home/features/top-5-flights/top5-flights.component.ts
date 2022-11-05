@@ -4,7 +4,7 @@ import { Flight } from '../../../flights/models/flight';
 import { Top5FlightsFacade } from '../../../flights/services/top5-flights.facade';
 
 @Component({
-  selector: 'top5-flights',
+  selector: 'feature-top5-flights',
   templateUrl: './top5-flights.component.html',
   styleUrls: ['./top5-flights.component.css'],
 })
