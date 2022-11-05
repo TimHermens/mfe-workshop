@@ -36,6 +36,9 @@
       "@flight-workspace/home-page-home": [
         "libs/home/pages/page-home/_index/index.ts"
       ],
+      "@flight-workspace/passenger-domain": [
+        "libs/passenger/domain/src/index.ts"
+      ],
       "@flight-workspace/shared-ui": ["libs/shared/ui/src/index.ts"],
       "@flight-workspace/shared-util": ["libs/shared/util/src/index.ts"]
     }

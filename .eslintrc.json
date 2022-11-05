@@ -82,6 +82,13 @@
                   "domain:flight-api",
                   "domain:shared"
                 ]
+              },
+              {
+                "sourceTag": "domain:passenger",
+                "onlyDependOnLibsWithTags": [
+                  "domain:passenger",
+                  "domain:shared"
+                ]
               }
             ]
           }

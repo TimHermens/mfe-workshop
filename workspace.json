@@ -13,6 +13,7 @@
     "flight-ui": "libs/flight/ui",
     "home-features-top-five-flights": "libs/home/features/top-five-flights",
     "home-page-home": "libs/home/pages/page-home/_index",
+    "passenger-domain": "libs/passenger/domain",
     "schematics": "tools/schematics",
     "shared-ui": "libs/shared/ui",
     "shared-util": "libs/shared/util"
