@@ -24,6 +24,11 @@
       "schema": "./page/schema.json",
       "description": "Create new page"
     },
+    "remote": {
+      "factory": "./remote",
+      "schema": "./remote/schema.json",
+      "description": "Create new remote"
+    },
     "ui": {
       "factory": "./ui",
       "schema": "./ui/schema.json",
