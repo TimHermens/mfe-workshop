@@ -2,10 +2,12 @@
   "$schema": "node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "flight": "apps/flight",
     "flight-api": "libs/flight/api",
     "flight-app": "apps/flight-app",
     "flight-app-e2e": "apps/flight-app-e2e",
     "flight-domain": "libs/flight/domain",
+    "flight-e2e": "apps/flight-e2e",
     "flight-features-flight-edit": "libs/flight/features/flight-edit",
     "flight-features-flight-search": "libs/flight/features/flight-search",
     "flight-page-flight-edit": "libs/flight/pages/page-flight-home/page-flight-edit/_index",
