@@ -9,22 +9,17 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () =>
-      import('@flight-workspace/home-page-home').then((m) => m.HomeModule),
+    loadChildren: () => import('home/Module').then((m) => m.RemoteEntryModule),
   },
   {
     path: 'flights',
     loadChildren: () =>
-      import('@flight-workspace/flight-page-flight-home').then(
-        (m) => m.FlightHomeModule
-      ),
+      import('flight/Module').then((m) => m.RemoteEntryModule),
   },
   {
     path: 'passengers',
     loadChildren: () =>
-      import('@flight-workspace/passenger-page-passenger-home').then(
-        (m) => m.PassengerHomeModule
-      ),
+      import('passenger/Module').then((m) => m.RemoteEntryModule),
   },
   {
     path: '**',
