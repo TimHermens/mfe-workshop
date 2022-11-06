@@ -67,7 +67,6 @@
                 "sourceTag": "domain:flight-app",
                 "onlyDependOnLibsWithTags": [
                   "domain:flight-app",
-                  "domain:flight-app-entry-page",
                   "domain:shared"
                 ]
               },
