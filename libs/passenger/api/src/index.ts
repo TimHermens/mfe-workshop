@@ -2,4 +2,7 @@ export {
   Passenger,
   TopFivePassengersFacade,
 } from '@flight-workspace/passenger-domain';
-export { PassengerTableModule } from '@flight-workspace/passenger-ui';
+export {
+  PassengerTableModule,
+  PassengerTableComponent,
+} from '@flight-workspace/passenger-ui';
