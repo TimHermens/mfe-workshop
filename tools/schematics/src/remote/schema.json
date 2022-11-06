@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsRemote",
+  "title": "Remote Schematic Schema",
+  "cli": "nx",
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "aliases": ["d"],
+      "description": "The domain this remote belongs to",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What domain does this remote belong to?"
+    },
+    "port": {
+      "type": "number",
+      "aliases": ["p"],
+      "description": "The port this remote runs on",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "What unique port does this remote run on?"
+    }
+  },
+  "required": ["domain", "port"]
+}
