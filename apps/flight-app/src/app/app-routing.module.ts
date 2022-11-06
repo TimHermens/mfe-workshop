@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { loadRemoteModule } from '@nrwl/angular/mf';
 
 const routes: Routes = [
   {
@@ -9,17 +10,20 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('home/Module').then((m) => m.RemoteEntryModule),
+    loadChildren: () =>
+      loadRemoteModule('home', './Module').then((m) => m.RemoteEntryModule),
   },
   {
     path: 'flights',
     loadChildren: () =>
-      import('flight/Module').then((m) => m.RemoteEntryModule),
+      loadRemoteModule('flight', './Module').then((m) => m.RemoteEntryModule),
   },
   {
     path: 'passengers',
     loadChildren: () =>
-      import('passenger/Module').then((m) => m.RemoteEntryModule),
+      loadRemoteModule('passenger', './Module').then(
+        (m) => m.RemoteEntryModule
+      ),
   },
   {
     path: '**',
