@@ -11,6 +11,8 @@
     "flight-page-flight-edit": "libs/flight/pages/page-flight-home/page-flight-edit/_index",
     "flight-page-flight-home": "libs/flight/pages/page-flight-home/_index",
     "flight-ui": "libs/flight/ui",
+    "home": "apps/home",
+    "home-e2e": "apps/home-e2e",
     "home-features-top-five-flights": "libs/home/features/top-five-flights",
     "home-features-top-five-passengers": "libs/home/features/top-five-passengers",
     "home-page-home": "libs/home/pages/page-home/_index",
@@ -23,8 +25,6 @@
     "passenger-ui": "libs/passenger/ui",
     "schematics": "tools/schematics",
     "shared-ui": "libs/shared/ui",
-    "shared-util": "libs/shared/util",
-    "test": "apps/test",
-    "test-e2e": "apps/test-e2e"
+    "shared-util": "libs/shared/util"
   }
 }
