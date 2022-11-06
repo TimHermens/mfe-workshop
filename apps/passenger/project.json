@@ -1,0 +1,127 @@
+{
+  "name": "passenger",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/passenger/src",
+  "prefix": "flight-workspace",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/passenger",
+        "index": "apps/passenger/src/index.html",
+        "main": "apps/passenger/src/main.ts",
+        "polyfills": "apps/passenger/src/polyfills.ts",
+        "tsConfig": "apps/passenger/tsconfig.app.json",
+        "assets": [
+          "apps/passenger/src/favicon.ico",
+          "apps/passenger/src/assets"
+        ],
+        "styles": [
+          "apps/passenger/src/styles.css",
+          "apps/passenger/src/assets/css/bootstrap.min.css",
+          "apps/passenger/src/assets/css/paper-dashboard.css",
+          "apps/passenger/src/assets/css/demo.css",
+          "apps/passenger/src/assets/css/themify-icons.css"
+        ],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/passenger/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/passenger/src/environments/environment.ts",
+              "with": "apps/passenger/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/passenger/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "passenger:build:production"
+        },
+        "development": {
+          "browserTarget": "passenger:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4203,
+        "publicHost": "http://localhost:4203",
+        "proxyConfig": "proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "passenger:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/passenger/**/*.ts",
+          "apps/passenger/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/passenger"],
+      "options": {
+        "jestConfig": "apps/passenger/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/angular:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "passenger:build",
+        "port": 4203
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "passenger:build:development"
+        },
+        "production": {
+          "buildTarget": "passenger:build:production"
+        }
+      }
+    }
+  },
+  "tags": ["domain:passenger", "type:app"]
+}
