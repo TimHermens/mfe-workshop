@@ -1,0 +1,43 @@
+{
+  "name": "home-features-top-five-passengers",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/home/features/top-five-passengers/src",
+  "prefix": "feature",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/home/features/top-five-passengers"],
+      "options": {
+        "project": "libs/home/features/top-five-passengers/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/home/features/top-five-passengers/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/home/features/top-five-passengers/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/home/features/top-five-passengers"],
+      "options": {
+        "jestConfig": "libs/home/features/top-five-passengers/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/home/features/top-five-passengers/**/*.ts",
+          "libs/home/features/top-five-passengers/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:home", "type:feature"]
+}

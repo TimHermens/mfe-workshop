@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "name": "passenger-page-passenger-home",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/passenger/pages/page-passenger-home/_index",
   "projectType": "library",
   "prefix": "page",

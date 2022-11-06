@@ -33,9 +33,13 @@
       "@flight-workspace/home-features-top-five-flights": [
         "libs/home/features/top-five-flights/src/index.ts"
       ],
+      "@flight-workspace/home-features-top-five-passengers": [
+        "libs/home/features/top-five-passengers/src/index.ts"
+      ],
       "@flight-workspace/home-page-home": [
         "libs/home/pages/page-home/_index/index.ts"
       ],
+      "@flight-workspace/passenger-api": ["libs/passenger/api/src/index.ts"],
       "@flight-workspace/passenger-domain": [
         "libs/passenger/domain/src/index.ts"
       ],

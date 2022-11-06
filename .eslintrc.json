@@ -80,6 +80,7 @@
                 "onlyDependOnLibsWithTags": [
                   "domain:home",
                   "domain:flight-api",
+                  "domain:passenger-api",
                   "domain:shared"
                 ]
               },
