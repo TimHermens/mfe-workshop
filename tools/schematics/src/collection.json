@@ -1,0 +1,43 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "flight-workspace-collection",
+  "version": "0.0.2",
+  "extends": ["@nrwl/angular"],
+  "schematics": {
+    "api": {
+      "factory": "./api",
+      "schema": "./api/schema.json",
+      "description": "Create new api"
+    },
+    "domain": {
+      "factory": "./domain",
+      "schema": "./domain/schema.json",
+      "description": "Create new domain"
+    },
+    "feature": {
+      "factory": "./feature",
+      "schema": "./feature/schema.json",
+      "description": "Create new feature"
+    },
+    "page": {
+      "factory": "./page",
+      "schema": "./page/schema.json",
+      "description": "Create new page"
+    },
+    "remote": {
+      "factory": "./remote",
+      "schema": "./remote/schema.json",
+      "description": "Create new remote"
+    },
+    "ui": {
+      "factory": "./ui",
+      "schema": "./ui/schema.json",
+      "description": "Create new ui"
+    },
+    "util": {
+      "factory": "./util",
+      "schema": "./util/schema.json",
+      "description": "Create new util"
+    }
+  }
+}

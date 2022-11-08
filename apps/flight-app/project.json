@@ -1,4 +1,6 @@
 {
+  "name": "flight-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/flight-app/src",
   "prefix": "flight-workspace",
@@ -68,6 +70,9 @@
           "browserTarget": "flight-app:build:development"
         }
       },
+      "options": {
+        "proxyConfig": "proxy.conf.json"
+      },
       "defaultConfiguration": "development"
     },
     "extract-i18n": {
@@ -92,14 +97,7 @@
         "jestConfig": "apps/flight-app/jest.config.ts",
         "passWithNoTests": true
       }
-    },
-
-    "demo-executor": {
-      "executor": "@flight-workspace/my-plugin:build",
-      "options": {
-        "folder": "dist"
-      }
     }
   },
-  "tags": ["type:app", "domain:flights"]
+  "tags": ["type:app", "domain:flight-app"]
 }

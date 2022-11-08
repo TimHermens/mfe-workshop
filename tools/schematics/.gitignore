@@ -1,0 +1,5 @@
+
+# ignore all generated files in the migrations schematics from the typescript compiler
+src/migrations/*/*.js
+
+coverage/

@@ -1,11 +1,12 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "flight-workspace",
   "affected": {
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
+    "defaultCollection": "@flight-workspace/schematics",
+    "packageManager": "yarn"
   },
   "implicitDependencies": {
     "package.json": {
@@ -23,24 +24,29 @@
       }
     }
   },
-  "--tasksRunnerOptions": {
-    "default": {
-      "runner": "./tools/task-runners/custom-task-runner",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "remoteDirectory": "c:\\temp\\remote-cache"
-      }
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "generators": {
+    "@flight-workspace/schematics:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@flight-workspace/schematics:component": {
+      "style": "css"
+    },
+    "@flight-workspace/schematics:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "buildable": true
+    },
+    "@flight-workspace/schematics:page": {
+      "directory": "pages"
+    },
     "@nrwl/angular:application": {
       "style": "css",
       "linter": "eslint",
@@ -49,7 +55,8 @@
     },
     "@nrwl/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "buildable": true
     },
     "@nrwl/angular:component": {
       "style": "css"

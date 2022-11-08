@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsPage",
+  "title": "Page Schematic Schema",
+  "cli": "nx",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the page",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the page?"
+    },
+    "domain": {
+      "type": "string",
+      "aliases": ["d"],
+      "description": "The domain this page belongs to",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "What domain does this page belong to?"
+    },
+    "app": {
+      "type": "string",
+      "aliases": ["application"],
+      "description": "Name of the application this page belongs to",
+      "x-prompt": "For which application do you want to include a link to this page? Press [Enter] if you don't want to link it."
+    },
+    "page": {
+      "type": "string",
+      "aliases": ["parent"],
+      "description": "Name of the parent page. This should match the project name in the workspace.json file (optional)",
+      "default": "",
+      "x-prompt": "What is the parent page project name (see project.json)? Press [Enter] if you want to create a top level page."
+    },
+    "directory": {
+      "type": "string",
+      "description": "Subpath of the library beneath the domain or shared folder."
+    },
+    "styleext": {
+      "description": "The file extension to be used for style files.",
+      "type": "string",
+      "default": "css"
+    }
+  },
+  "required": ["name", "domain"]
+}

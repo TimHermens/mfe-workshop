@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tsconfig-base utils updateTsBaseConfig should create an entry for the project 1`] = `
+"{
+  \\"compilerOptions\\": {
+    \\"paths\\": {
+      \\"@senses/my-new-app\\": [
+        \\"apps/my-new-app/src/index.ts\\"
+      ]
+    }
+  }
+}
+"
+`;
