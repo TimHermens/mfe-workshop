@@ -1,0 +1,106 @@
+{
+  "name": "airport",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/airport/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/airport",
+        "index": "apps/airport/src/index.html",
+        "baseHref": "/",
+        "main": "apps/airport/src/main.ts",
+        "polyfills": "apps/airport/src/polyfills.ts",
+        "tsConfig": "apps/airport/tsconfig.app.json",
+        "assets": ["apps/airport/src/favicon.ico", "apps/airport/src/assets"],
+        "styles": [
+          "apps/airport/src/styles.css",
+          "apps/airport/src/assets/css/bootstrap.min.css",
+          "apps/airport/src/assets/css/paper-dashboard.css",
+          "apps/airport/src/assets/css/demo.css",
+          "apps/airport/src/assets/css/themify-icons.css"
+        ],
+        "scripts": [],
+        "webpackConfig": "apps/airport/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/airport/src/environments/environment.ts",
+              "with": "apps/airport/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/airport/webpack.config.prod.js"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "airport:build",
+        "hmr": true,
+        "port": 4204,
+        "proxyConfig": "proxy.conf.json"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "airport:build:development"
+        },
+        "production": {
+          "buildTarget": "airport:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/airport/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/airport"],
+      "options": {
+        "jestConfig": "apps/airport/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/web:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "airport:build",
+        "port": 4204
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "airport:build:development"
+        },
+        "production": {
+          "buildTarget": "airport:build:production"
+        }
+      }
+    }
+  },
+  "tags": ["domain:airport", "type:app"]
+}

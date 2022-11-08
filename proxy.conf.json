@@ -5,5 +5,33 @@
     "pathRewrite": {
       "^/api": ""
     }
+  },
+  "/mfe/home": {
+    "target": "http://localhost:4201",
+    "secure": false,
+    "pathRewrite": {
+      "^/mfe/home": ""
+    }
+  },
+  "/mfe/flight": {
+    "target": "http://localhost:4202",
+    "secure": false,
+    "pathRewrite": {
+      "^/mfe/flight": ""
+    }
+  },
+  "/mfe/passenger": {
+    "target": "http://localhost:4203",
+    "secure": false,
+    "pathRewrite": {
+      "^/mfe/passenger": ""
+    }
+  },
+  "/mfe/airport": {
+    "target": "http://localhost:4204",
+    "secure": false,
+    "pathRewrite": {
+      "^/mfe/airport": ""
+    }
   }
 }

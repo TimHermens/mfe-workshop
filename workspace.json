@@ -2,6 +2,8 @@
   "$schema": "node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "airport": "apps/airport",
+    "airport-e2e": "apps/airport-e2e",
     "flight": "apps/flight",
     "flight-api": "libs/flight/api",
     "flight-app": "apps/flight-app",

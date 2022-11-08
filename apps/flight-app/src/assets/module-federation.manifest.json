@@ -1,5 +1,6 @@
 {
   "home": "http://localhost:4201",
   "flight": "http://localhost:4202",
-  "passenger": "http://localhost:4203"
+  "passenger": "http://localhost:4203",
+  "airport": "http://localhost:4204"
 }
