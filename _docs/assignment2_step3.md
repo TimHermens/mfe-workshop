@@ -1,7 +1,5 @@
 # Step 3: Transform the `flight-app` project to a host application
 
----
-
 To be able to load the remote applications into the flight-app application,
 you need to transform the flight-app project into a host application.
 
@@ -9,8 +7,6 @@ Normally you can also use the nrwl CLI commands to generate an app as a host: `n
 But you will follow a manual approach because we already have an existing app.
 
 ## Add eager & lazy loading bootstrap support
-
----
 
 The Module Federation plugin requires that all projects and their dependencies support an eager &
 lazy bootstrapping method. Angular apps are eagerly bootstrapped by default. So you need to add a
@@ -37,8 +33,6 @@ importing the bootstrap logic in the `main.ts` file.
 All done! The flight-app now supports eager & lazy loading.
 
 ## Implementing Static Module Federation for our host app
-
----
 
 There are two flavours when you want to implement Module Federation in your host app: static and
 dynamic Module Federation.
@@ -209,8 +203,6 @@ If everything works as expected, continue with setting up the Dynamic Module Fed
 
 ## Dynamic Module Federation
 
----
-
 There are 4 steps involved to move from Static to Dynamic Module Federation:
 
 1. Set the Remote Definitions so that webpack is aware of how to find the Remote applications when requested.
@@ -305,8 +297,6 @@ Please open the network tab and reload the app. Notice that the remoteEntry.mjs 
 load when you access a remote resource such as a page. 
 
 ## Clean up unnecessary boundary domain rules
-
----
 
 Before we added Module Federation support to our project, we needed to add special boundary domain
 rules to allow the `flight-app` project to import the entry pages from other domains. But with

@@ -1,13 +1,9 @@
 # Additional stuff
 
----
-
 Congratulations, you have made it to the end! Here are some other awesome features that are also
 readily available thanks to NX and our implemented Domain-Driven Design.
 
 ## Extra package.json commands
-
----
 
 You may have noticed some extra commands in the root package.json file, notably the `affected` commands.
 The `affected` commands will run specific targets (build / test / lint / etc.) on ALL affected
@@ -29,8 +25,6 @@ project. Then run any of the `affected` commands you are interested in (e.g. `ya
 The command should only target the affected projects.
 
 ## Affected integration tests
-
----
 
 Also notice that there is a `affected:e2e` command that invokes a custom script. I have created this
 custom script to showcase how you could also implement affected integration testing. It involves
