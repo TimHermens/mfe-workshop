@@ -28,7 +28,7 @@
       "type": "string",
       "aliases": ["application"],
       "description": "Name of the application this page belongs to",
-      "x-prompt": "For which application do you want to include a link to this page? Press [Enter] if you don't want to link it."
+      "default": ""
     },
     "page": {
       "type": "string",
