@@ -3,7 +3,7 @@
  */
 export interface Schema {
   name: string;
-  app: string;
+  app?: string;
   domain: string;
   page?: string;
   styleext?: string;
