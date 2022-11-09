@@ -60,6 +60,10 @@
                 "onlyDependOnLibsWithTags": ["type:util"]
               },
               {
+                "sourceTag": "type:util",
+                "onlyDependOnLibsWithTags": ["type:util"]
+              },
+              {
                 "sourceTag": "domain:shared",
                 "onlyDependOnLibsWithTags": ["domain:shared"]
               },
