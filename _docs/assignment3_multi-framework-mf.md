@@ -6,8 +6,13 @@ functionality within this new domain has been created with the <u>**React**</u> 
 
 ## Step 1: Checkout and yarn
 
-Checkout the branch `assignment3` and create a new branch you can freely work on. A bunch of new
-packages have been added to support React. Please install them in the meantime:
+Checkout the branch `assignment3` and create a new branch you can freely work on:
+
+```bash
+git checkout -b your-unique-branch origin/assignment3
+```
+
+A bunch of new packages have been added to support React. Please install them in the meantime:
 
 ```bash
 yarn
