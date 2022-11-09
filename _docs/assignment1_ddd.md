@@ -8,8 +8,6 @@ fitting domains.
 
 ## Step 1: Create new branch and yarn
 
----
-
 Please create a new branch on top of the `main` branch you can freely work on.
 
 ```bash
@@ -23,8 +21,6 @@ yarn
 ```
 
 ## Step 2: Identify the domains
-
----
 
 Let's start with firing up the app to see what we work with:
 
@@ -58,8 +54,6 @@ thing that needs to be shared will be part of an API within one of the domains.
 Now go ahead and identify the other domains.
 
 ## Step 3: Generate domain projects
-
----
 
 If you are confident with your identified domains, you can start generating domain projects
 for them. I have added a custom CLI schematic with a bunch of custom generators you can use
@@ -143,8 +137,6 @@ boundaries, preventing a complete entangled mess.
 
 ## Step 4: Generate util projects
 
----
-
 Figure out if you need an util project for the shared domain and generate it:
 
 ```bash
@@ -166,8 +158,6 @@ nx g util --domain your-domain-name
    import the project with this alias import in other projects.
 
 ## Step 5: Generate ui projects
-
----
 
 Figure out if you need an ui project for the shared domain and generate it:
 
@@ -191,8 +181,6 @@ nx g ui --domain your-domain-name
 
 ## Step 6: Generate api projects
 
----
-
 It does not make sense to generate an API project for the shared domain. So just figure out if
 you need API projects for the other domains. You can skip this step if you are unsure.
 
@@ -213,8 +201,6 @@ nx g api --domain your-domain-name
 
 ## Step 7: Generate feature projects
 
----
-
 Ideally, you should not need feature projects in the shared domain. So just figure out if
 you need feature projects for the other domains.
 
@@ -231,8 +217,6 @@ nx g feature --name your-feature-name --domain your-domain-name
    import the project with this alias import in other projects.
 
 ## Step 8: Generate page projects
-
----
 
 It does not make sense to add page projects in the shared domain. So just figure out if
 you need page projects for the other domains.
@@ -260,8 +244,6 @@ project. So it's important to start with generating the root page projects first
 4. In case a nested page was generated, this page is automatically imported by the parent page.
 
 ## Step 9: Move the functionality to the appropriate projects
-
----
 
 > ### Important note
 >
@@ -318,8 +300,6 @@ Violations could indicate that:
 
 ## Step 10: Update the routing
 
----
-
 Go to `apps/flight-app/src/app/app-routing.module.ts` and change the imports of the paths to your
 generated root page projects. Use the alias import paths that were generated in the `tsconfig.base.json`
 file.
@@ -327,8 +307,6 @@ file.
 Also make sure that the routing is correct in your page projects.
 
 ## Step 11: Test-run the application
-
----
 
 Let's make sure you do not have any lint errors such as boundary violations:
 

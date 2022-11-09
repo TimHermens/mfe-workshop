@@ -11,8 +11,6 @@ all the domain applications together.
 
 ## Checkout
 
----
-
 ### Option 1
 
 Checkout the branch `assignment2` and create a new branch you can freely work on:

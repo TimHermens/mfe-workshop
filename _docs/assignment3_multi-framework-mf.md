@@ -6,8 +6,6 @@ functionality within this new domain has been created with the <u>**React**</u> 
 
 ## Step 1: Checkout and yarn
 
----
-
 Checkout the branch `assignment3` and create a new branch you can freely work on. A bunch of new
 packages have been added to support React. Please install them in the meantime:
 
@@ -16,8 +14,6 @@ yarn
 ```
 
 ## Step 2: Investigate new airport app
-
----
 
 You will see a new app located at `apps/airport`. I have not implemented a Domain-Driven Design for this app. You
 can find every functionality within the `src/app` folder. I did try to recreate the DDD structure
@@ -56,8 +52,6 @@ expects the remoteEntry file to be Modular Javascript (mjs). The host applicatio
 be able to support this remote app without changing this.
 
 ## Step 3: Exposing the airport app as a Web Component
-
----
 
 The `webpack.config.js` exposes a remote entry web component file:
 
@@ -112,8 +106,6 @@ order to mount the airport app in our host app, we need the host app to have thi
 located somewhere in the app.
 
 ## Step 4: Mounting the airport app as a web component in the host app
-
----
 
 I have already implemented something that takes care of mounting a web component in the host app.
 You can find the implementation here: `apps/flight-app/src/app/remote-web-component/remote-web-component.ts`:
@@ -205,8 +197,6 @@ and <u>**not**</u> in the Angular Router context. If I had configured the route 
 then requesting a nested route like /airports/1 would result in a 404 error.
 
 ## Test-run the flight-app
-
----
 
 Let's see everything in action!
 

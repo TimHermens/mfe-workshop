@@ -17,8 +17,6 @@ context remains intact.
 
 ## Caching the airports route
 
----
-
 I have created a new routing strategy that can cache any route:
 `apps/flight-app/src/app/cached-route-reuse-strategy.ts`.
 I have added the /airports route as the route to cache:
@@ -130,8 +128,6 @@ app. My advice is to only do this if you want to migrate an app to a new framewo
 only need to temporarily support multiple frameworks until the migration finishes.
 
 ## Just one final thing
-
----
 
 One nice final nice thing to change is how the manifest.json file is set up. It is not a good thing
 that the domain urls need to be specified in a publicly available JSON file. In a production

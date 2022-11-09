@@ -1,7 +1,5 @@
 # Step 1: Create a remote domain application for the `Home` domain
 
----
-
 ## Generate a new remote domain application
 
 Normally you can use a nrwl CLI command to generate new remote domain applications:
